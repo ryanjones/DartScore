@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
   $(function() {
-    window.router = new DartScore.Routers.DartboardsRouter({dartboards: <%= @dartboards.to_json.html_safe -%>});
+    window.router = new DartScore.Routers.DartboardsRouter();
     Backbone.history.start();
   });
 </script>

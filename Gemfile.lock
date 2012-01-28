@@ -38,6 +38,11 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     daemons (1.1.5)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
     ejs (1.0.0)
     erubis (2.7.0)
     eventmachine (1.0.0.beta.4.1-x86-mingw32)
@@ -115,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  eco
   jquery-rails
   rails (= 3.2.0)
   rails-backbone
