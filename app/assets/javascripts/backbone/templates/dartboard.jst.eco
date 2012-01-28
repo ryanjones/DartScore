@@ -1,12 +1,6 @@
 <h1>The Dartboard View!</h1>
-
-<table id="dartboards-table">
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</table>
-
 <br/>
+
+<% if 7 > 3: %>
+  testing eco template
+<% end %>
