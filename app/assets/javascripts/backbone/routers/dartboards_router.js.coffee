@@ -7,6 +7,6 @@ class DartScore.Routers.DartboardsRouter extends Backbone.Router
     ".*"        : "index"
 
   index: ->
-    @view = new DartScore.Views.Dartboards.IndexView()
+    @view = new DartScore.Views.Dartboards.DartboardView()
     $("#dartboards").html(@view.render().el)
 
