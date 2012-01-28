@@ -1,0 +1,9 @@
+<div id="dartboards"></div>
+
+<script type="text/javascript">
+  $(function() {
+    window.router = new DartScore.Routers.DartboardsRouter({dartboards: <%= @dartboards.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>
+
