@@ -8,6 +8,7 @@ jQuery ->
     
     render: =>
       $(@el).append(@template())
+      $('#waffles').remove()
 
   @app = window.app ? {}
   @app.DartboardView = DartboardView
