@@ -8,7 +8,7 @@ jQuery ->
       ".*"        : "index"
   
     index: ->
-      @view = new app.DartboardView()
+      @view = new app.DartboardView
     
   @app = window.app ? {}
   @app.DartboardsRouter = DartboardsRouter
