@@ -1,9 +1,13 @@
-DartScore.Views.Dartboards ||= {}
+jQuery ->
+  class DartboardView extends Backbone.View
+    el: $ '#dartboards'
+    template: JST["backbone/templates/dartboard"]
+    
+    initialize: ->
+      @render()
+    
+    render: =>
+      $(@el).append(@template())
 
-class DartScore.Views.Dartboards.DartboardView extends Backbone.View
-  template: JST["backbone/templates/dartboard"]
-
-  render: =>
-    $(@el).html(@template())
-    return this
-
+  @app = window.app ? {}
+  @app.DartboardView = DartboardView

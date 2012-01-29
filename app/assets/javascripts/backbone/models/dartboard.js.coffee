@@ -1,6 +1,11 @@
-class DartScore.Models.Dartboard extends Backbone.Model
+class Dartboard extends Backbone.Model
 
+  @app = window.app ? {}
+  @app.Dartboard = Dartboard
 
-class DartScore.Collections.DartboardsCollection extends Backbone.Collection
-  model: DartScore.Models.Dartboard
+class Dartboards extends Backbone.Collection
+  #would need @app.Dartboard if they were in the different files
+  model: Dartboard
 
+  @app = window.app ? {}
+  @app.Dartboards = new Dartboards

@@ -4,8 +4,3 @@
 #= require_tree ./views
 #= require_tree ./routers
 
-window.DartScore =
-  Models: {}
-  Collections: {}
-  Routers: {}
-  Views: {}

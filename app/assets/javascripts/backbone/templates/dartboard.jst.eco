@@ -1,6 +1,12 @@
 <h1>The Dartboard View!</h1>
 <br/>
 
+<div id="waffles">
+delete me!
+</div>
+
 <% if 7 > 3: %>
   testing eco template
 <% end %>
+
+
