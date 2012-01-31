@@ -3,3 +3,4 @@
 <% if 7 > 3: %>
   testing eco template for data display
 <% end %>
+<label id="score" />
