@@ -8,3 +8,7 @@ The router routes to /index (based off of url) which points to "index" ->
 index router method create a new indexview and passes in @dartboards ->
 indexview specifies a template, passes @dartboards to it, and renders the html ->
 index view adds all @dartboards to the DOM
+
+
+    
+    
