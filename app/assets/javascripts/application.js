@@ -17,5 +17,5 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/dart_score
-//= require ./dartboards
+//= require ./main
 //= require backbone/extra/extra_order

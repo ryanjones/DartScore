@@ -1,21 +1,31 @@
 $ -> 
     stage = new Kinetic.Stage("the_dartboard", 1024, 768)
     
-    # Build example background
-    # iPad1024768 = new Kinetic.Shape( (color)->
-        # canvas = @.getCanvas()
-        # context = @.getContext()
-        # context.fillStyle = '#3ac6e5'
-        # context.fillRect(0, 0, 1024, 768)
-        # context.fill()
-        # )
-    # stage.add(iPad1024768)
+    #Build example background
+    board_space = new Kinetic.Shape( (color)->
+        canvas = @.getCanvas()
+        context = @.getContext()
+        context.fillStyle = '#3ac6e5'
+        context.fillRect(324, 0, 700, 768)
+        context.fill()
+        )
+    stage.add(board_space)
+    
+    #Build example background
+    score_space = new Kinetic.Shape( (color)->
+        canvas = @.getCanvas()
+        context = @.getContext()
+        context.fillStyle = '#333'
+        context.fillRect(0, 0, 324, 768)
+        context.fill()
+        )
+    stage.add(score_space)
 
-    # Setup dartbaord vars
-    centreX = 380
+    # Setup dartboard vars
+    centreX = 673
     centreY = 384
     r1 = 50
-    bandWidth = 70
+    bandWidth = 98
     values = new Array(20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5)
     delta = Math.PI / 10
     theta = 29 * Math.PI / 20
@@ -62,10 +72,8 @@ $ ->
             context.fillText(this.text, textX, textY)
         )        
         area.on("click", () ->
-          a = new app.Dashboard
-          alert(a.count)
-          
           $(score).html(this.text)
+          app.scoreboard.set({title: this.text})
         )
           
         area.color = "green"

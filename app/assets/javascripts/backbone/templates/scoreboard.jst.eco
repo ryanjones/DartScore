@@ -1,4 +1,4 @@
-<h1>The Dartboard View!</h1>
+<h1>The Scoreboard View!</h1>
 <br/>
 <% if 7 > 3: %>
   testing eco template for data display

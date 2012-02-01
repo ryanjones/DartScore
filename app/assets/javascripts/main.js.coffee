@@ -5,5 +5,5 @@
 @app = window.app ? {}
 
 jQuery ->
-  @app.router = new app.DartboardsRouter
+  @app.router = new app.ScoreboardsRouter
   Backbone.history.start({pushState:true})

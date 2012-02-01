@@ -11,4 +11,5 @@ index view adds all @dartboards to the DOM
 
 
     
-    
+main.js -> main app driver
+/extra/html5_dartboard -> html5 dartboard (which updates scoreboard)

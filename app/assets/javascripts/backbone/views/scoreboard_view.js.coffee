@@ -1,7 +1,7 @@
 jQuery ->
-  class DartboardView extends Backbone.View
+  class ScoreboardView extends Backbone.View
     el: $ 'body'
-    template: JST["backbone/templates/dartboard"]
+    template: JST["backbone/templates/scoreboard"]
     
     initialize: ->
       @render()
@@ -9,8 +9,6 @@ jQuery ->
     render: =>
       $(@el).append(@template())
       #$('#waffles').remove()
-      
-
 
   @app = window.app ? {}
-  @app.DartboardView = DartboardView
+  @app.ScoreboardView = ScoreboardView
