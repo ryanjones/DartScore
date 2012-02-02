@@ -12,7 +12,7 @@ jQuery ->
       ".*"        : "index"
   
     index: ->
-      @view = new app.ScoreboardView(model: @scoreboardz)
+      @view = new app.ScoreboardView(model: @scoreTrack)
     
   @app = window.app ? {}
   @app.ScoreboardsRouter = ScoreboardsRouter
