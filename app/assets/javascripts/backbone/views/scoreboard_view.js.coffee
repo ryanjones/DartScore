@@ -3,11 +3,11 @@ jQuery ->
     el: $ 'body'
     template: JST["backbone/templates/scoreboard"]
     
-    initialize: ->
+    initialize: () ->
       @render()
     
-    render: =>
-      $(@el).append(@template())
+    render: ->
+      $(@el).append(@template(@model.toJSON()))
       #$('#waffles').remove()
 
   @app = window.app ? {}

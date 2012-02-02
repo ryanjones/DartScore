@@ -2,14 +2,17 @@ jQuery ->
   class ScoreboardsRouter extends Backbone.Router
     initialize: () ->
       # Create the scoreboard
-      app.scoreboard = new app.Scoreboard
+      @scoreTrack = new app.Scoreboard
+      
+      # Add it to the global collection so I can access it later
+      app.Scoreboards.add(@scoreTrack)
   
     routes:
       "/index"    : "index"
       ".*"        : "index"
   
     index: ->
-      @view = new app.ScoreboardView
+      @view = new app.ScoreboardView(model: @scoreboardz)
     
   @app = window.app ? {}
   @app.ScoreboardsRouter = ScoreboardsRouter

@@ -1,8 +1,9 @@
 jQuery ->
   class Scoreboard extends Backbone.Model
     defaults:
-      count: 0
-      
+      p1_score: 0
+      p2_score: 0
+        
     initialize: ->
           
     @app = window.app ? {}

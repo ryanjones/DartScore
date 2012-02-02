@@ -4,3 +4,4 @@
   testing eco template for data display
 <% end %>
 <label id="score" />
+<% @model.p1_score %>
