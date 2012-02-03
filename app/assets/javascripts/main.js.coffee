@@ -5,5 +5,6 @@
 @app = window.app ? {}
 
 jQuery ->
+  @app.main_scoreboard = new app.Scoreboard
   @app.router = new app.ScoreboardsRouter
   Backbone.history.start({pushState:true})

@@ -72,8 +72,8 @@ $ ->
             context.fillText(this.text, textX, textY)
         )        
         area.on("click", () ->
-          $(score).html(this.text)
-          app.scoreboard.set({title: this.text})
+          #app.main_scoreboard.set({p1_score: this.text})
+          #determine whos turn it is, update main_scoreboard
         )
           
         area.color = "green"

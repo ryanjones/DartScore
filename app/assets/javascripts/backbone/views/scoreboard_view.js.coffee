@@ -1,14 +1,14 @@
 jQuery ->
   class ScoreboardView extends Backbone.View
-    el: $ '#the_scoreboard'
+    el: $ '#main_scoreboard'
     template: JST["backbone/templates/scoreboard"]
-    
+
     initialize: () ->
       @render()
-    
-    render: =>
+
+    render: ->
       $(@el).html(@template(@model.toJSON()))
-      #$('#waffles').remove()
+      @
 
   @app = window.app ? {}
   @app.ScoreboardView = ScoreboardView
