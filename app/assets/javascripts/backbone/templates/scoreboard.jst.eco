@@ -1,7 +1,0 @@
-<h1>The Scoreboard View!</h1>
-<br/>
-<% if 7 > 3: %>
-  testing eco template for data display
-<% end %>
-<label id="score" />
-<% @model.p1_score %>
