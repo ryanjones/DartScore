@@ -3,8 +3,8 @@ $ ->
     
     #Build example background
     board_space = new Kinetic.Shape( (color)->
-        canvas = @.getCanvas()
-        context = @.getContext()
+        canvas = @getCanvas()
+        context = @getContext()
         context.fillStyle = '#3ac6e5'
         context.fillRect(324, 0, 700, 768)
         context.fill()
@@ -13,8 +13,8 @@ $ ->
     
     #Build example background
     score_space = new Kinetic.Shape( (color)->
-        canvas = @.getCanvas()
-        context = @.getContext()
+        canvas = @getCanvas()
+        context = @getContext()
         context.fillStyle = '#333'
         context.fillRect(0, 0, 324, 768)
         context.fill()
@@ -49,12 +49,12 @@ $ ->
             x2 = innerRadius * Math.cos(startAngle + delta) + centreX
             y2 = innerRadius * Math.sin(startAngle + delta) + centreY
   
-            context = @.getContext()
+            context = @getContext()
             
             context.beginPath()
             context.lineWidth = 4
             context.strokeStyle = "black"
-            context.fillStyle = @.color
+            context.fillStyle = @color
     
             context.moveTo(x1, y1)
             context.arc(centreX, centreY, outerRadius, startAngle, startAngle + delta, false)
@@ -69,10 +69,10 @@ $ ->
             textY = (outerRadius - 20) * Math.sin(startAngle + delta / 2) + centreY + 4
             context.font = "8pt Verdana"
             context.fillStyle = "#000000"
-            context.fillText(@.text, textX, textY)
+            context.fillText(@text, textX, textY)
         )        
         area.on("click", () ->
-          app.player_1.set({name: @.text})
+          app.player_1.set({name: @text})
           #determine whos turn it is, update main_scoreboard
         )
           

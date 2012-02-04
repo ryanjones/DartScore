@@ -3,7 +3,7 @@ jQuery ->
     template: JST["backbone/templates/player"]
     
     initialize: () ->
-      this.model.bind('change', this.render, this);
+      @model.bind('change', @render, @);
       
     render: ->
       $(@el).append(@template(@model.toJSON()))
