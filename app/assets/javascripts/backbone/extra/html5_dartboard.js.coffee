@@ -72,8 +72,9 @@ $ ->
             context.fillText(@text, textX, textY)
         )        
         area.on("click", () ->
-          app.player_1.set({name: @text})
-          app.player_2.set({name: @text})
+          #current_player = GetCurrentPlayer()
+          #current_player.set({current_shot: @text})
+          app.player_1.set({current_shot: @text})
           #determine whos turn it is, update main_scoreboard
         )
           
@@ -81,4 +82,6 @@ $ ->
         area.text = (value * (3 - i))
         stage.add(area)
       
-          
+# Check which player we're on
+  GetCurrentPlayer = () ->
+    app.main_scoreboard.current_player

@@ -5,6 +5,7 @@ jQuery ->
       throw_history_d2: []
       throw_history_d3: []
       name: ''
+      current_shot: ''
         
     initialize: (player_name) ->
       @name = player_name
