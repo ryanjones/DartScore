@@ -30,37 +30,13 @@
   height:768px;
 }
 
-#player1_name
+.float_left
 {
   position:relative;
   float:left;
 }
 
-#player2_name
-{
-  position:relative;
-  float:right;
-}
-
-#player1_score 
-{
-  position:relative;
-  float:left;
-}
-
-#player2_score
-{
-  position:relative;
-  float:right;
-}
-
-#player1_totalscore
-{
-  position:relative;
-  float:left;
-}
-
-#player2_totalscore
+.float_right
 {
   position:relative;
   float:right;
