@@ -1,5 +1,5 @@
 jQuery ->
-  class Score extends Backbone.Model
+  class Player extends Backbone.Model
     defaults:
       throw_history_d1: []
       throw_history_d2: []
@@ -10,10 +10,10 @@ jQuery ->
       @name = player_name
           
     @app = window.app ? {}
-    @app.Score = Score
+    @app.Player = Player
   
-  class Scores extends Backbone.Collection
-    model: Score
+  class Players extends Backbone.Collection
+    model: Player
   
     @app = window.app ? {}
-    @app.Scores = new Scores
+    @app.Players = new Players

@@ -6,5 +6,7 @@
 
 jQuery ->
   @app.main_scoreboard = new app.Scoreboard
+  @app.player_1 = new app.Player({name:'p1'})
+  @app.player_2 = new app.Player({name:'p2'})
   @app.router = new app.ScoreboardsRouter
   Backbone.history.start({pushState:true})
