@@ -5,7 +5,7 @@ jQuery ->
 
     initialize: () ->
       @render()
-
+      
     render: ->
       $(@el).append(@template(@model.toJSON()))
       @
