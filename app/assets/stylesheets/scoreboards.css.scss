@@ -1,3 +1,24 @@
 // Place all the styles related to the Dartboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#the_scoreboard
+{
+  position: relative;
+  width:324px;
+  height:768px;
+  float:left;
+}
+
+#the_dartboard
+{
+  position:relative;
+  float:right;
+  width:700px;
+  height:768px;
+}
+
+#the_container
+{
+  width:1024px;
+  height:768px;
+}

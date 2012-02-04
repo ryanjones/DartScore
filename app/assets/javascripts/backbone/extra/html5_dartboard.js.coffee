@@ -1,28 +1,28 @@
 $ -> 
-    stage = new Kinetic.Stage("the_dartboard", 1024, 768)
+    stage = new Kinetic.Stage("the_dartboard", 700, 768)
     
     #Build example background
     board_space = new Kinetic.Shape( (color)->
         canvas = @getCanvas()
         context = @getContext()
         context.fillStyle = '#3ac6e5'
-        context.fillRect(324, 0, 700, 768)
+        context.fillRect(0, 0, 700, 768)
         context.fill()
         )
     stage.add(board_space)
     
     #Build example background
-    score_space = new Kinetic.Shape( (color)->
-        canvas = @getCanvas()
-        context = @getContext()
-        context.fillStyle = '#333'
-        context.fillRect(0, 0, 324, 768)
-        context.fill()
-        )
-    stage.add(score_space)
+    # score_space = new Kinetic.Shape( (color)->
+        # canvas = @getCanvas()
+        # context = @getContext()
+        # context.fillStyle = '#333'
+        # context.fillRect(0, 0, 324, 768)
+        # context.fill()
+        # )
+    # stage.add(score_space)
 
     # Setup dartboard vars
-    centreX = 673
+    centreX = 350
     centreY = 384
     r1 = 50
     bandWidth = 98
