@@ -7,7 +7,13 @@
   width:324px;
   height:768px;
   float:left;
+}
+
+#player_scorearea
+{
   overflow:auto;
+  width:324px;
+  height:745px;
 }
 
 #the_dartboard
@@ -24,13 +30,37 @@
   height:768px;
 }
 
-#player1_score
+#player1_name
+{
+  position:relative;
+  float:left;
+}
+
+#player2_name
+{
+  position:relative;
+  float:right;
+}
+
+#player1_score 
 {
   position:relative;
   float:left;
 }
 
 #player2_score
+{
+  position:relative;
+  float:right;
+}
+
+#player1_totalscore
+{
+  position:relative;
+  float:left;
+}
+
+#player2_totalscore
 {
   position:relative;
   float:right;
