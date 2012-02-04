@@ -73,6 +73,7 @@ $ ->
         )        
         area.on("click", () ->
           app.player_1.set({name: @text})
+          app.player_2.set({name: @text})
           #determine whos turn it is, update main_scoreboard
         )
           
