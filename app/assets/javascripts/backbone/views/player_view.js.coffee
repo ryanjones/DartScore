@@ -1,6 +1,5 @@
 jQuery ->
   class PlayerView extends Backbone.View
-    el: $('#player1_score')
     template: JST["backbone/templates/player"]
 
     initialize: () ->
@@ -11,5 +10,5 @@ jQuery ->
       @
       
   @app = window.app ? {}
-  @app.ScoreboardView = ScoreboardView
+  @app.PlayerView = PlayerView
   
