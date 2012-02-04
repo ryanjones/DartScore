@@ -9,6 +9,7 @@ jQuery ->
       # in the future.. when a an item is added, make sur eyou're at the "bottom"
       # of the overflow..
       $(@el).append(@template(@model.toJSON()))
+      $("#player_scorearea").scrollTop($("#player_scorearea")[0].scrollHeight);
       @
       
 
