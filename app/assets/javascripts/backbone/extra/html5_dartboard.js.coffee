@@ -49,12 +49,12 @@ $ ->
             x2 = innerRadius * Math.cos(startAngle + delta) + centreX
             y2 = innerRadius * Math.sin(startAngle + delta) + centreY
   
-            context = this.getContext()
+            context = @.getContext()
             
             context.beginPath()
             context.lineWidth = 4
             context.strokeStyle = "black"
-            context.fillStyle = this.color
+            context.fillStyle = @.color
     
             context.moveTo(x1, y1)
             context.arc(centreX, centreY, outerRadius, startAngle, startAngle + delta, false)
@@ -69,10 +69,10 @@ $ ->
             textY = (outerRadius - 20) * Math.sin(startAngle + delta / 2) + centreY + 4
             context.font = "8pt Verdana"
             context.fillStyle = "#000000"
-            context.fillText(this.text, textX, textY)
+            context.fillText(@.text, textX, textY)
         )        
         area.on("click", () ->
-          app.player_1.set({throw_history_d1: this.text})
+          app.player_1.set({name: @.text})
           #determine whos turn it is, update main_scoreboard
         )
           
