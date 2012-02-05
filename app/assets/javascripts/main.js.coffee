@@ -7,6 +7,6 @@
 jQuery ->
   @app.player_1 = new app.Player({name:'p1'})
   @app.player_2 = new app.Player({name:'p2'})
-  @app.main_scoreboard = new app.Scoreboard(@app.player_1)
+  @app.main_scoreboard = new app.Scoreboard({current_player:app.player_1})
   @app.router = new app.DartboardRouter
   Backbone.history.start({pushState:true})

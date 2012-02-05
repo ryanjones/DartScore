@@ -1,11 +1,8 @@
 jQuery ->
   class Scoreboard extends Backbone.Model
-    defaults:
-      current_player: null
         
-    initialize: (player) ->
-      @current_player = player
-          
+    initialize: () ->
+      
     @app = window.app ? {}
     @app.Scoreboard = Scoreboard
   

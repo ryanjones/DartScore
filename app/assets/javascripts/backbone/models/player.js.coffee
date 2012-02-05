@@ -4,11 +4,9 @@ jQuery ->
       throw_history_d1: []
       throw_history_d2: []
       throw_history_d3: []
-      name: ''
       current_shot: ''
         
-    initialize: (player_name) ->
-      @name = player_name
+    initialize: () ->
           
     @app = window.app ? {}
     @app.Player = Player

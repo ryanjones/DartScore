@@ -72,10 +72,10 @@ $ ->
             context.fillText(@text, textX, textY)
         )        
         area.on("click", () ->
-          #current_player = GetCurrentPlayer()
-          #current_player.set({current_shot: @text})
-          app.player_1.set({current_shot: @text})
+          current_player = GetCurrentPlayer()
+          current_player.set({current_shot: @text})
           #determine whos turn it is, update main_scoreboard
+          
         )
           
         area.color = "green"
@@ -84,4 +84,4 @@ $ ->
       
 # Check which player we're on
   GetCurrentPlayer = () ->
-    app.main_scoreboard.current_player
+    app.main_scoreboard.get("current_player")
