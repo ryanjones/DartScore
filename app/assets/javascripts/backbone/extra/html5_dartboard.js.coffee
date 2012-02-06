@@ -72,6 +72,7 @@ $ ->
             context.fillText(@text, textX, textY)
         )        
         area.on("click", () ->
+          @click_count = 0
           UpdateColor(@, stage)
 
           # current_player = GetCurrentPlayer()
@@ -93,12 +94,16 @@ $ ->
     # If the area is pressed, change it red (within 3 shots)
     if area.color is "green" and board_hits_length <= 2
       area.color = "red"
-      UpdateCurrentBoardHits("add", area.text, board_hits_length)
+      UpdateCurrentBoardHits("add", area, board_hits_length)
       
-    # Remove it from the current board hits and change it to green  
-    else if area.color is "red" and board_hits_length > 0
+    # If it's red, you can go up to 3 times
+    else if area.color is "red" and board_hits_length <= 2
+      area.color = "red"
+      UpdateCurrentBoardHits("add", area, board_hits_length)
+      
+    else if area.color is "red" and board_hits_length >= 3
       area.color = "green"
-      UpdateCurrentBoardHits("remove", area.text, board_hits_length)
+      UpdateCurrentBoardHits("remove_all", area, board_hits_length)
       
     # Maxed out on hits, keep as green
     else
@@ -107,18 +112,25 @@ $ ->
     # Redraw the stage after logic
     stage.draw()
 
-  UpdateCurrentBoardHits = (type, text, board_hits_length) ->
+  UpdateCurrentBoardHits = (type, area, board_hits_length) ->
     # Get the current board hits
     current_board_hits = app.main_scoreboard.get("board_hits")
     
     # Add hit to the current board hits
     if type is "add"
-      current_board_hits[board_hits_length] = text
-      
+      current_board_hits[board_hits_length] = area.text
+      area.click_count = area.click_count + 1
+
     # Remove hit from current board hits
     else if type is "remove"
-      remove_position = jQuery.inArray(text, current_board_hits)
+      remove_position = jQuery.inArray(area.text, current_board_hits)
       current_board_hits.splice(remove_position, 1)
+      area.click_count = area.click_count - 1
+      
+    # Remove all hits from current board hits
+    else if type is "remove_all"
+      current_board_hits.length = 0
+      area.click_count = 0
 
     # Set the current board hits after the logic
     app.main_scoreboard.set({board_hits:current_board_hits})
