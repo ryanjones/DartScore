@@ -72,10 +72,10 @@ $ ->
             context.fillText(@text, textX, textY)
         )        
         area.on("click", () ->
-          current_player = GetCurrentPlayer()
-          current_player.set({current_shot: @text})
-          #determine whos turn it is, update main_scoreboard
-          
+          UpdateColor(@, stage)
+
+          # current_player = GetCurrentPlayer()
+            # current_player.set({current_shot: @text})  
         )
           
         area.color = "green"
@@ -85,3 +85,41 @@ $ ->
 # Check which player we're on
   GetCurrentPlayer = () ->
     app.main_scoreboard.get("current_player")
+
+# Make sure the amount of selections on the board is <= 3
+  UpdateColor = (area, stage) ->
+    board_hits_length = app.main_scoreboard.get("board_hits").length
+    
+    # If the area is pressed, change it red (within 3 shots)
+    if area.color is "green" and board_hits_length <= 2
+      area.color = "red"
+      UpdateCurrentBoardHits("add", area.text, board_hits_length)
+      
+    # Remove it from the current board hits and change it to green  
+    else if area.color is "red" and board_hits_length > 0
+      area.color = "green"
+      UpdateCurrentBoardHits("remove", area.text, board_hits_length)
+      
+    # Maxed out on hits, keep as green
+    else
+      area.color = "green"
+      
+    # Redraw the stage after logic
+    stage.draw()
+
+  UpdateCurrentBoardHits = (type, text, board_hits_length) ->
+    # Get the current board hits
+    current_board_hits = app.main_scoreboard.get("board_hits")
+    
+    # Add hit to the current board hits
+    if type is "add"
+      current_board_hits[board_hits_length] = text
+      
+    # Remove hit from current board hits
+    else if type is "remove"
+      remove_position = jQuery.inArray(text, current_board_hits)
+      current_board_hits.splice(remove_position, 1)
+
+    # Set the current board hits after the logic
+    app.main_scoreboard.set({board_hits:current_board_hits})
+    

@@ -1,5 +1,7 @@
 jQuery ->
   class Scoreboard extends Backbone.Model
+    defaults:
+      board_hits: []
         
     initialize: () ->
       
