@@ -101,7 +101,7 @@ $ ->
       area.color = "red"
       UpdateCurrentBoardHits("add", area, board_hits_length)
       
-    else if area.color is "red" and board_hits_length >= 3
+    else if area.color is "red" and board_hits_length >= 3 
       area.color = "green"
       UpdateCurrentBoardHits("remove_all", area, board_hits_length)
       
